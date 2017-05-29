@@ -36,9 +36,12 @@
 ---
 ## WHY Webpack?
 > Because it can minify your code, manage your dependency, add plugin and many more. 
+
 ## WHY Webpack Development Server?
 > A lot things are not provided in just file protocal. e.g, automatic relaoding your application whenever your code changes. A better way of running our project and testing our project.
 
+## Why loader?
+> Loaders are modules that allow us to transform our files. Previously, we always import css files manually in index.html via link tag which is conventional. But would it be nice if we can import CSS file into JS file. (Sounds weird, but it's only purpose is to inform webpack when to import this file, not really mixing it with javascript). And it will be nice if webpack just output the compiled css file into the head section of our index.html. Furthremore, it can compile types, ES6, SCSS, SASS, and many more.
 
 
 ## STEP BY STEP for WEBPACK Config
@@ -88,6 +91,61 @@ In package.json, change the script to
 ```
 
 
+## STEP BY STEP for css loaders
+```
+npm install css-loader style-loader --save-dev
+```
+Now, we have to tell webpack to take these loaders into account when analzing our file.
+Now, we need to add a module property. In there, we can confiqure how webpack should treat your modules. 
+> What is modules? Modules are any things that's exported, so that other files can import such as the file dom-loader.js.
+>
+> Set up rules for modules, how should they be treated. It's an array of objects.
+>
+> test: it tells webpack what does the rule applies, it test the file extension, eg: javscript file -> "test: /\.js$/" .As you can see this regular expression test if file ends with js.
+> 
+> loader: tell it which laoder you apply to the javascript file, but only 1 loader
+>
+> use: which allow us to use multiple loaders, and specify loaders options. Also, webpack apply loader in reverse order, so in this setup, it loads css-loader first, and then, style-loader which is what we want.
+>
+> css-loader: only allow us to import css into javascript
+>
+> style-loader: take the style and add to the index.html file
+```
+var path = require('path'); //this is a nodejs package, help you resolve correct path
+module.exports = {
+    entry: './src/js/app.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
+        publicPath: '/dist'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            }
+        ]
+    }
+};
+
+```
+In app.js, include css files. (We are not mixing code, we are telling webpack where to include these css files).Now we are treasting css files as modules.
+```
+import '../css/main.css';
+import '../css/input-elements.css'
+```
+Now it should work properly. Webpack will now use css-loader to allow importing css into javascript. And use style-loader to make the styles take effect in index.html.
+
+
+
+
+
+
+
 ## STEP BY STEP for WEBPACK DEV-SERVER
 ```
 npm install webpack-dev-server --save-dev
@@ -135,4 +193,4 @@ include bundle.js into index.html, then drag index.html into browser to open
 ```
 npm run build:prod  //create production minified version
 ```
-###### Notes from https://www.youtube.com/watch?v=HNRt0lODCQM&list=PL55RiY5tL51rcCnrOrZixuOsZhAHHy6os&index=2
+###### Notes from https://www.youtube.com/watch?v=8DDVr6wjJzQ&list=PL55RiY5tL51rcCnrOrZixuOsZhAHHy6os&index=3
