@@ -93,7 +93,7 @@ In package.json, change the script to
 ```
 
 
-## STEP BY STEP for css loaders
+## STEP BY STEP for css loaders and style loaders
 ```
 npm install css-loader style-loader --save-dev
 ```
