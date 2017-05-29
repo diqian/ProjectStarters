@@ -1,12 +1,12 @@
 # How to open
-> Drag index.html into browser or double click index.html
+> npm run build
 ---
 ## How it work?
-> npm run build, will invoke a script in package.json. This script will invoke webpack, and tell it to start with app.js and merge all the dependencies which are included in app.js into one bundle.js file. 
-> Then, index.html include bundle.js
+> npm run build, will invoke a script in package.json. This script will invoke webpack-dev-server, and tell it to start with app.js and merge all the dependencies which are included in app.js into one bundle.js file. Bundle.js will be stored in memory, thus you won't be able to see it, but you will need it in production mode (npm run build:prod). 
+> Then, index.html include bundle.js (even in memory, it works)
 ---
 ## Notice:
-> It use file protocal, not http protocal. Thus, no server included.
+> It use the server that webpack-dev-server provoides.
 ---
 ## Attention
 > If you import a.js into app.js, then you have to export the code in a.js
@@ -14,7 +14,7 @@
 ## File Structure
 ```
 .
-|____dist                       (genereated by webpack)
+|____dist                       (genereated by webpack, in memory when dev mode)
 | |____bundle.js                (included in index.html)
 |____index.html                 (entry)
 |____node_modules
@@ -33,7 +33,51 @@
 ## WHY Webpack?
 > Because it can minify your code, manage your dependency, add plugin and many more. 
 ## WHY Webpack Development Server?
-> A lot things are not provided in just file protocal. E.G, automatic relaoding your application whenever your code changes. A better way of running our project and testing our project.
+> A lot things are not provided in just file protocal. e.g, automatic relaoding your application whenever your code changes. A better way of running our project and testing our project.
+
+
+
+
+
+## STEP BY STEP for WEBPACK DEV-SERVER
+```
+npm install webpack-dev-server --save-dev
+```
+In build script, you can replace first line with second line. Webpack-dev-server has all the good things webpack, plus a development server.
+...you have to provide --entry to tell explicity app.js is the entry, and prefix it with ./ to tell it runs from the root folder.
+...you also have to provide --output-filename to tell which output file webpack-dev-server is outputing to, and also prefix with ./
+```
+//"build": "webpack src/js/app.js dist/bundle.js"
+"build": "webpack-dev-server --entry ./src/js/app.js --output-filename ./dist/bundle.js"
+```
+```
+npm run build
+```
+## Notice: now, after this command, dist/bundle.js file will be stored in memory. Thus, if you can't see dist/bundle.js and program still work, it's becuase of that.
+
+```
+go to localhost:8080
+```
+Sample output
+```
+Project is running at http://localhost:8080/
+webpack output is served from /
+Hash: a6ba8bd855846b1d58b4
+Version: webpack 2.6.1
+Time: 672ms
+           Asset    Size  Chunks                    Chunk Names
+./dist/bundle.js  315 kB       0  [emitted]  [big]  null
+chunk    {0} ./dist/bundle.js (null) 301 kB [entry] [rendered]
+.
+.
+.
+webpack: Compiled successfully.
+```
+
+
+
+
+
 
 ## Step By Step For Webpack-- Clone the project HTML_CSS_JS, and modify from there
 
@@ -92,41 +136,3 @@ npm run build:prod  //create production minified version
 Drag your index.html into browser
 ```
 ###### Notes from https://www.youtube.com/watch?v=GU-2T7k9NfI&list=PL55RiY5tL51rcCnrOrZixuOsZhAHHy6os
-
-
-
-##STEP BY STEP for WEBPACK DEV-SERVER
-```
-npm install webpack-dev-server --save-dev
-```
-In build script, you can replace first line with second line. Webpack-dev-server has all the good things webpack, plus a development server.
-...you have to provide --entry to tell explicity app.js is the entry, and prefix it with ./ to tell it runs from the root folder.
-...you also have to provide --output-filename to tell which output file webpack-dev-server is outputing to, and also prefix with ./
-```
-//"build": "webpack src/js/app.js dist/bundle.js"
-"build": "webpack-dev-server --entry ./src/js/app.js --output-filename ./dist/bundle.js"
-```
-```
-npm run build
-```
-## Notice: now, after this command, dist/bundle.js file will be stored in memory. Thus, if you can't see dist/bundle.js and program still work, it's becuase of that.
-
-```
-go to localhost:8080
-```
-Sample output
-```
-Project is running at http://localhost:8080/
-webpack output is served from /
-Hash: a6ba8bd855846b1d58b4
-Version: webpack 2.6.1
-Time: 672ms
-           Asset    Size  Chunks                    Chunk Names
-./dist/bundle.js  315 kB       0  [emitted]  [big]  null
-chunk    {0} ./dist/bundle.js (null) 301 kB [entry] [rendered]
-.
-.
-.
-webpack: Compiled successfully.
-```
-
