@@ -19,7 +19,7 @@
 | |____bundle.js                (included in index.html)
 |____index.html                 (entry)
 |____node_modules
-|____webpack.config.js			(configration file for webpack)
+|____webpack.config.js			    (configration file for webpack)
 |____package.json               (has command for starting project)
 |____README.MD
 |____src
@@ -56,9 +56,13 @@ module.exports = {
 };
 ```
 Privde the output, tell it where to store it, and what to name it.
+   
    __dirname: reserved word means current direcotry. 
+   
    The reason we use resolve is because the output path need to an absolute path. (unlike entry path, which is relative path)
+   
    filename: what webpack need to name this file
+   
    publicPath: where the asset could be found
 ```
 var path = require('path'); //this is a nodejs package, help you resolve correct path
@@ -87,27 +91,10 @@ In package.json, change the script to
 
 
 
-
-
-
-
 ## STEP BY STEP for WEBPACK DEV-SERVER
 ```
 npm install webpack-dev-server --save-dev
-```
-In package.json, you can replace the old script with the following one. Webpack-dev-server has all the good things of webpack, plus a development server.
 
-   you have to provide --entry to tell explicity app.js is the entry, and prefix it with ./ to tell it runs from the root folder.
-
-   you also have to provide --output-filename to tell which output file webpack-dev-server is outputing to, and also prefix with ./
-```
-//"build": "webpack src/js/app.js dist/bundle.js"
-"build": "webpack-dev-server --entry ./src/js/app.js --output-filename ./dist/bundle.js"
-```
-```
-npm run build
-```
-## Notice: now, after this command, dist/bundle.js file will be stored in memory. Thus, if you can't see dist/bundle.js and program still work, it's becuase of that.
 
 ```
 go to localhost:8080
@@ -132,7 +119,6 @@ webpack: Compiled successfully.
 
 
 
-
 ## Step By Step For Webpack-- Clone the project HTML_CSS_JS, and modify from there
 
 1. create package.json
@@ -144,15 +130,7 @@ npm init
 ```
 npm install webpack --save-dev  
 ```
-
-3. go to package.json, add a script
-...webpack -> this will target the webpack package 
-...app.js  -> entry point (this is where webpack starts its journey)
-...dist/bundle.js -> dist means distribution, bundle.js is the output file
-```
-"build":  "webpack src/js/app.js dist/bundle.js"
-```
-4. Now, webpack will go to app.js file, and we have to tell webpack in app.js file what app.js file depends on. And then, webpack will merge all the dependencies starting from app.js file into 1 bundle
+Now, webpack will go to app.js file, and we have to tell webpack in app.js file what app.js file depends on. And then, webpack will merge all the dependencies starting from app.js file into 1 bundle
 ...In order for webpack to work, now in app.js, you have to import all the files, which means, in all the imported files, you also need to export them.
 
 ```
@@ -169,10 +147,6 @@ import { secretParagraph, secretButton }'./dom_loader';
 ### Noitce
 > import and export are ES6 Syntax, but for now, just by webpack, it only recognize import and export. Doesn't recognize any other ES6 syntax. Keep in mind.
 
-```
-npm run build  //this will run the script you defined in package.json
-                //before you run this command, there won't be a dist folder!!
-``` 
 
 ```
 include bundle.js into index.html, then drag index.html into browser to open
@@ -185,8 +159,5 @@ include bundle.js into index.html, then drag index.html into browser to open
 ```
 ```
 npm run build:prod  //create production minified version
-```
-```
-Drag your index.html into browser
 ```
 ###### Notes from https://www.youtube.com/watch?v=HNRt0lODCQM&list=PL55RiY5tL51rcCnrOrZixuOsZhAHHy6os&index=2
