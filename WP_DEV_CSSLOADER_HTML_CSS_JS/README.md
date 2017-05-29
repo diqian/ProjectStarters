@@ -54,7 +54,7 @@
 >
 > MODULE LOADERS, allow us to transform our code
 >
-> PLUGINS
+> PLUGINS: almost same as loader, but again, they are really different. Loaders are applied on a per-file basis. eg. we use test: /\.css$/ to check css files and on every css files, we apply these laoders to transform the code or load it correctly. A plugin is then applied to your bundle before you output. If you have some transformation that you want apply to all your code, a plugin is what you are looking for. For exmaple: minificaition plugin.
 
 In root folder, add webpack.config.js, webpack will know to process it automatically. (this file need to export a javascript object which holds javascript configration, thus, you need to use nodejs export syntax)
 ```
@@ -144,6 +144,43 @@ Now it should work properly. Webpack will now use css-loader to allow importing 
 
 
 
+
+
+
+
+## STEP BY STEP for Plugin
+
+Say now, we want to confiqure the minification plugin that came with webpack.
+1. plugin: is an array
+2. new webpack : we need to inistiaate 
+3. now, if we don't pass any configuration to it, it will just minify everything for us. So now, in both dev mode or prod mode, code is minified.  (Don't include this plugin config file if you don't want your code to be minified during production mode)
+```
+var path = require('path'); //this is a nodejs package, help you resolve correct path
+var webpack = require('webpack'); 
+module.exports = {
+    entry: './src/js/app.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
+        publicPath: '/dist'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            }
+        ]
+    },
+    plugin: [
+        new webpack.optimize.UgligyJsPlugin({
+        })
+    ]
+};
+```
 
 
 
