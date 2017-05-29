@@ -3,7 +3,9 @@
 ---
 ## How it work?
 > npm run build, will invoke a script in package.json. This script will invoke webpack-dev-server. In the meantime, it will process webpack.config.js which is the configration file. In config file, it will tell dev-server to start with app.js and merge all the dependencies which are included in app.js into one bundle.js file. Bundle.js will be stored in memory, thus you won't be able to see it, but you will need it in production mode (npm run build:prod). 
+>
 > Then, index.html include bundle.js (even bundle.js during dev mode is created in memory, the app will still run).
+>
 > Go to localhost:8080 to see your app.
 ---
 ## Notice:
