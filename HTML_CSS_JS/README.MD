@@ -1,13 +1,14 @@
 # How to open
-## Drag index.html into browser or double click index.html
+> Drag index.html into browser or double click index.html
 
 # Use file protocal, not http protocal
 
 # index.html has link to both stylesheets and to both js files.
 
-## Notice: You have to include files into index.html in certain order. Always include the base css on top of other css, same with js files.
+> Notice: You have to include files into index.html in certain order. Always include the base css on top of other css, same with js files.
 
 
+```
 # File Structure
 .
 |____index.html   (entry)
@@ -19,4 +20,4 @@
 | |____js
 | | |____app.js
 | | |____dom-loader.js
-
+```
