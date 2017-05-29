@@ -1,11 +1,14 @@
 # How to open
 > Drag index.html into browser or double click index.html
 ---
-> Use file protocal, not http protocal
+## Notice:
+> It use file protocal, not http protocal
 ---
-> index.html has link to both stylesheets and to both js files.
+# How it work?
+> index.html has link to both stylesheets and to both js files, that's why you can see everything
 ---
-> Notice: You have to include files into index.html in certain order. Always include the base css on top of other css, same with js files.
+# Attention
+> You have to include files into index.html in certain order. Always include the base css on top of other css, same with js files.
 ---
 ```
 # File Structure
