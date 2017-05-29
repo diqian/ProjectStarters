@@ -12,3 +12,7 @@
 ## WEBPACK_DEVSERVER_CONFIG_HTML_CSS_JS  (WB_DEV_CONFIG_HTML_CSS_JS)
 > Uses webpack-dev-server as server, no plugin, including webpack and webpack-devserver, no backend, only frontend code. Set up basic configuration for webpack.
 ---
+## WEBPACK_DEVSERVER_CSSLOADER_HTML_CSS_JS  (WB_DEV_CSSLOADER_HTML_CSS_JS)
+> Uses webpack-dev-server as server, no plugin, allow css to be imported into JS files by using cssloader and style loader in webpack config. Including webpack and webpack-devserver, no backend, only frontend code.
+---
+
