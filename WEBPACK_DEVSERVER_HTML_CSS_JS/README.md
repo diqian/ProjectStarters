@@ -46,7 +46,7 @@ npm install webpack-dev-server --save-dev
 ```
 In package.json, you can replace the old script with the following one. Webpack-dev-server has all the good things of webpack, plus a development server.
 
-...you have to provide --entry to tell explicity app.js is the entry, and prefix it with ./ to tell it runs from the root folder.
+   you have to provide --entry to tell explicity app.js is the entry, and prefix it with ./ to tell it runs from the root folder.
 
 ...you also have to provide --output-filename to tell which output file webpack-dev-server is outputing to, and also prefix with ./
 ```
