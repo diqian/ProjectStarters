@@ -19,7 +19,7 @@
 .
 |____dist                       (genereated by webpack, in memory when dev mode)
 | |____bundle.js                (included in index.html)
-|____index.html                 (entry)
+|____index.html                 (The end point for all the file, and being displayed in browser)
 |____node_modules
 |____webpack.config.js          (configration file for webpack)
 |____package.json               (has command for starting project)
@@ -29,7 +29,7 @@
 | | |____input-elements.css
 | | |____main.css
 | |____js
-| | |____app.js
+| | |____app.js                 (entry for webpack, all js and css files are imported here, and compiled into bundle.js)
 | | |____dom-loader.js
 
 ```

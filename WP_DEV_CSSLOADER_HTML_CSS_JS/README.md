@@ -7,6 +7,8 @@
 > Then, index.html include bundle.js (even bundle.js during dev mode is created in memory, the app will still run).
 >
 > Go to localhost:8080 to see your app.
+>
+> Here, we import both css files into app.js instead of index.html. We can do that becuase of css-loader and style-loader. CSS laoder allows we import css file into js file. Style laoder will take the css file and inject into our index.html. Thus, when we open the file in browser, we can still see the styles, because they are injected by webpack and laoders.
 ---
 ## Notice:
 > It use the server that webpack-dev-server provoides.
@@ -19,18 +21,18 @@
 .
 |____dist                       (genereated by webpack, in memory when dev mode)
 | |____bundle.js                (included in index.html)
-|____index.html                 (entry)
+|____index.html                 (The endpoint of all files, and displayed in browser)
 |____node_modules
 |____webpack.config.js          (configration file for webpack)
 |____package.json               (has command for starting project)
 |____README.MD
 |____src
-| |____css
-| | |____input-elements.css
-| | |____main.css
+| |____css  
+| | |____input-elements.css     (import into app.js)
+| | |____main.css               (import into app.js)
 | |____js
-| | |____app.js
-| | |____dom-loader.js
+| | |____app.js                 (entry for webpack, all js and css files are imported here, and compiled into bundle.js)
+| | |____dom-loader.js          (import into app.js)
 
 ```
 ---
