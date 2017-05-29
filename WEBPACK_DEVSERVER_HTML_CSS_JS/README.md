@@ -48,7 +48,7 @@ In package.json, you can replace the old script with the following one. Webpack-
 
    you have to provide --entry to tell explicity app.js is the entry, and prefix it with ./ to tell it runs from the root folder.
 
-...you also have to provide --output-filename to tell which output file webpack-dev-server is outputing to, and also prefix with ./
+   you also have to provide --output-filename to tell which output file webpack-dev-server is outputing to, and also prefix with ./
 ```
 //"build": "webpack src/js/app.js dist/bundle.js"
 "build": "webpack-dev-server --entry ./src/js/app.js --output-filename ./dist/bundle.js"
@@ -138,4 +138,4 @@ npm run build:prod  //create production minified version
 ```
 Drag your index.html into browser
 ```
-###### Notes from https://www.youtube.com/watch?v=GU-2T7k9NfI&list=PL55RiY5tL51rcCnrOrZixuOsZhAHHy6os
+###### Notes from https://www.youtube.com/watch?v=HNRt0lODCQM&list=PL55RiY5tL51rcCnrOrZixuOsZhAHHy6os&index=2
