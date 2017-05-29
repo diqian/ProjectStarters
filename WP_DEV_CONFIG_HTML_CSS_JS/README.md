@@ -88,12 +88,6 @@ In package.json, change the script to
 ```
 
 
-
-
-
-
-
-
 ## STEP BY STEP for WEBPACK DEV-SERVER
 ```
 npm install webpack-dev-server --save-dev
