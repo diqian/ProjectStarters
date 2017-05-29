@@ -3,7 +3,8 @@
 ---
 ## How it work?
 > npm run build, will invoke a script in package.json. This script will invoke webpack-dev-server, and tell it to start with app.js and merge all the dependencies which are included in app.js into one bundle.js file. Bundle.js will be stored in memory, thus you won't be able to see it, but you will need it in production mode (npm run build:prod). 
-> Then, index.html include bundle.js (even in memory, it works)
+> Then, index.html include bundle.js (even bundle.js during dev mode is created in memory, the app will still run).
+> Go to localhost:8080 to see your app.
 ---
 ## Notice:
 > It use the server that webpack-dev-server provoides.
@@ -43,8 +44,10 @@
 ```
 npm install webpack-dev-server --save-dev
 ```
-In build script, you can replace first line with second line. Webpack-dev-server has all the good things webpack, plus a development server.
+In package.json, you can replace the old script with the following one. Webpack-dev-server has all the good things of webpack, plus a development server.
+
 ...you have to provide --entry to tell explicity app.js is the entry, and prefix it with ./ to tell it runs from the root folder.
+
 ...you also have to provide --output-filename to tell which output file webpack-dev-server is outputing to, and also prefix with ./
 ```
 //"build": "webpack src/js/app.js dist/bundle.js"
