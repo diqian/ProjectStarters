@@ -21,7 +21,7 @@
 | |____bundle.js                (included in index.html)
 |____index.html                 (entry)
 |____node_modules
-|____webpack.config.js			    (configration file for webpack)
+|____webpack.config.js          (configration file for webpack)
 |____package.json               (has command for starting project)
 |____README.MD
 |____src
@@ -42,12 +42,16 @@
 
 
 ## STEP BY STEP for WEBPACK Config
-> Entry Point to tell webpack where to start it's journey
-> OUTPUT, where webpack should store our bundle.js
+### 4 main parts of webpack config
+> Entry Point: tell webpack where to start it's journey
+>
+> OUTPUT: tell webpack should store our bundle.js
+>
 > MODULE LOADERS, allow us to transform our code
+>
 > PLUGINS
 
-1. In root folder, add webpack.config.js, webpack will know to process it automatically. (this file need to export a javascript object which holds javascript configration, thus, you need to use nodejs export syntax)
+In root folder, add webpack.config.js, webpack will know to process it automatically. (this file need to export a javascript object which holds javascript configration, thus, you need to use nodejs export syntax)
 ```
 module.exports = {};
 ```
@@ -58,14 +62,11 @@ module.exports = {
 };
 ```
 Privde the output, tell it where to store it, and what to name it.
-   
-   __dirname: reserved word means current direcotry. 
-   
-   The reason we use resolve is because the output path need to an absolute path. (unlike entry path, which is relative path)
-   
-   filename: what webpack need to name this file
-   
-   publicPath: where the asset could be found
+> __dirname: reserved word means current direcotry. 
+> The reason we use resolve is because the output path need to an absolute path. (unlike entry path, which is relative path)
+> filename: what webpack need to name this file
+> publicPath: where the asset could be found
+
 ```
 var path = require('path'); //this is a nodejs package, help you resolve correct path
 module.exports = {
@@ -96,29 +97,7 @@ In package.json, change the script to
 ## STEP BY STEP for WEBPACK DEV-SERVER
 ```
 npm install webpack-dev-server --save-dev
-
-
 ```
-go to localhost:8080
-```
-Sample output
-```
-Project is running at http://localhost:8080/
-webpack output is served from /
-Hash: a6ba8bd855846b1d58b4
-Version: webpack 2.6.1
-Time: 672ms
-           Asset    Size  Chunks                    Chunk Names
-./dist/bundle.js  315 kB       0  [emitted]  [big]  null
-chunk    {0} ./dist/bundle.js (null) 301 kB [entry] [rendered]
-.
-.
-.
-webpack: Compiled successfully.
-```
-
-
-
 
 
 ## Step By Step For Webpack-- Clone the project HTML_CSS_JS, and modify from there
