@@ -33,28 +33,27 @@
 ## WHY Webpack?
 > Because it can minify your code, manage your dependency, add plugin and many more. 
 
-#### Step By Step -- Clone the project HTML_CSS_JS, and modify from there
+## Step By Step -- Clone the project HTML_CSS_JS, and modify from there
 
-create package.json
+1. create package.json
 ```
 npm init
 ```
 
-webpack is development only dependency, we won't need it for production. Also, webpack will be in your node_module folder after intallation
+2. webpack is development only dependency, we won't need it for production. Also, webpack will be in your node_module folder after intallation
 ```
 npm install webpack --save-dev  
 ```
 
-#### go to package.json, add a script
-#### webpack -> this will target the webpack package 
-#### app.js  -> entry point (this is where webpack starts its journey)
-#### dist/bundle.js -> dist means distribution, bundle.js is the output file
+3. go to package.json, add a script
+...webpack -> this will target the webpack package 
+...app.js  -> entry point (this is where webpack starts its journey)
+...dist/bundle.js -> dist means distribution, bundle.js is the output file
 ```
 "build":  "webpack src/js/app.js dist/bundle.js"
 ```
-#### Now, webpack will go to app.js file, and we have to tell webpack in app.js file what app.js file depends on. And then, webpack will merge all the dependencies starting from app.js file into 1 bundle
----
-#### In order for webpack to work, now in app.js, you have to import all the files, which means, in all the imported files, you also need to export them.
+4. Now, webpack will go to app.js file, and we have to tell webpack in app.js file what app.js file depends on. And then, webpack will merge all the dependencies starting from app.js file into 1 bundle
+...In order for webpack to work, now in app.js, you have to import all the files, which means, in all the imported files, you also need to export them.
 
 ```
 //in dom-loader.js, export things you want to export
