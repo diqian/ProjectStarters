@@ -36,10 +36,16 @@
 ```
 ---
 ## WHY REACT?
-> Fast, easy to use, It makes writing Javascript easier, Components are the future of web development, Bonus: Mobile Apps using React Native
+> Fast, easy to use, It makes writing Javascript easier, Components are the future of web development, Bonus: Mobile Apps using React Native.
+> 
+> ReactDOM is used to interact with the actual DOM while React is used to create and manage our components.
 >
->ReactDOM is used to interact with the actual DOM while React is used to create and manage our components.
-
+### How React Work?
+>
+> (state) => HTML(ish) -> Ract -> HTML
+>
+> You are only changing state, and return HTMLish stuff, and react will check weather virtual dom and HTML dom is different, if differnt, updating the spepcific piece. Say state is color, when onClick, color become black, it pass down to the component which uses it, and the component return JSX, and react check the updated virtual dom, if different, update the little piece on real dom.
+>
 ## WHY Webpack?
 > Because it can minify your code, manage your dependency, add plugin and many more. 
 
