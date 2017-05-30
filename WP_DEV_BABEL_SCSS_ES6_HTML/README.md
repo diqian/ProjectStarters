@@ -335,7 +335,7 @@ npm install webpack-dev-server --save-dev
 
 
 
-## Step By Step For Webpack -- and modify from there
+## Step By Step For Webpack
 
 1. create package.json
 ```
@@ -361,10 +361,7 @@ import { secretParagraph, secretButton }'./dom_loader';
 ```
 
 
-
-
 ### Noitce
-> import and export are ES6 Syntax, but for now, just by webpack, it only recognize import and export. Doesn't recognize any other ES6 syntax. Keep in mind.
-
+> import and export are ES6 Syntax, but for now, just by webpack, it only recognize import and export. Doesn't recognize any other ES6 syntax. Keep in mind. But with Babel, ES6 syntax is finally fully supported.
 
 ###### Notes from https://www.youtube.com/watch?v=8vnkM8JgjpU&list=PL55RiY5tL51rcCnrOrZixuOsZhAHHy6os&index=4
