@@ -1,0 +1,25 @@
+{
+  "name": "WP_DEV_BABEL_SCSS",
+  "version": "1.0.0",
+  "description": "> npm run build --- ## How it work? > npm run build, will invoke a script in package.json. This script will invoke webpack-dev-server. In the meantime, it will process webpack.config.js which is the configration file. In config file, it will tell dev-server to start with app.js and merge all the dependencies which are included in app.js into one bundle.js file. Bundle.js will be stored in memory, thus you won't be able to see it, but you will need it in production mode (npm run build:prod).  > > Then, index.html include bundle.js (even bundle.js during dev mode is created in memory, the app will still run). > > Go to localhost:8080 to see your app. > > Here, we import both css files into app.js instead of index.html. We can do that becuase of css-loader and style-loader. CSS laoder allows we import css file into js file. Style laoder will take the css file and inject into our index.html. Thus, when we open the file in browser, we can still see the styles, because they are injected by webpack and laoders. --- ## Notice: > It use the server that webpack-dev-server provoides. --- ## Attention > If you import a.js into app.js, then you have to export the code in a.js --- ## File Structure ``` . |____index.html |____README.md |____src | |____css | | |____ _colors.scss              (store color variable) | | |____main.scss                  (use _colors.sccs variables) | |____js | | |____app.js                     (entry for webpack) | | |____random-generator.js         ``` --- ## WHY Webpack? > Because it can minify your code, manage your dependency, add plugin and many more.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack-dev-server",
+    "build:prod": "webpack -p"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.5",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
