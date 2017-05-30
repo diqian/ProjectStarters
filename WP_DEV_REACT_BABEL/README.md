@@ -10,7 +10,7 @@
 >
 > Then, index.html include bundle.js (even bundle.js during dev mode is created in memory, the app will still run).
 >
-> Notice here, in index.html, we have <div id="root"></div>, which is the entry for react code. In src/app.js, react will target this root, and add inject all the react code in there.
+> Notice here, in index.html, we have a div with id="root", which is the entry for react code. In src/app.js, react will target this root, and add inject all the react code in there.
 >
 > Go to localhost:8080 to see your app.
 ---
