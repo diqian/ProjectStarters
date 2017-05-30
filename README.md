@@ -18,5 +18,3 @@
 ## WEBPACK_DEVSERVER_BABEL_SCSS_HTML_CSS_JS  (WB_DEV_BABEL_SCSS_ES6_HTML)
 > Uses webpack-dev-server as server. Using Babel to enable ES6 syntax, using sass-loader to enable SCSS syntax. No backend, only frontend code.
 ---
-
-
