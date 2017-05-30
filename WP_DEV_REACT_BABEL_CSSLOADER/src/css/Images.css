@@ -1,0 +1,14 @@
+.imageContainer {
+    width: 50px;
+    height: 50px;
+    background-color: green;
+}
+
+.btn {
+    background-color: grey;
+    font-size: 20px;
+}
+
+.btn:hover {
+    background-color: yellow;
+}
