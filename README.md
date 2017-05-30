@@ -24,3 +24,6 @@
 ## WEBPACK_DEVSERVER_REACT_BABEL_CSSLOADER  (WB_DEV_REACT_BABEL_CSSLOADER)
 > Uses webpack-dev-server as server. Using Babel to enable ES6 syntax. Use react preset to enable JSX parsing. User CSS Loader and style laoder to allow modulzation of css code in react project. A simple REACT starter, no router, no redux, no backend.
 ---
+## Express_Starter
+> User Express as server, and allow html to be seen.
+---
