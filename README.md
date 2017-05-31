@@ -30,3 +30,6 @@
 ## WEBPACK_EXPRESS_REACT
 > Uses Express as server, and run with react. Browser does not auto refresh. But with commands, server code are monitored, and React code are monitored. 
 ---
+## WEBPACK_EXPRESS_REACT_HOT_RELOADING
+> Uses Express as server, and run with react. Browser has auto refresh. For any change in server side or in react components, the change is instantly reflected in browser.
+---
