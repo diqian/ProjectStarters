@@ -25,5 +25,8 @@
 > Uses webpack-dev-server as server. Using Babel to enable ES6 syntax. Use react preset to enable JSX parsing. User CSS Loader and style laoder to allow modulzation of css code in react project. A simple REACT starter, no router, no redux, no backend.
 ---
 ## Express_Starter
-> User Express as server, and allow html to be seen.
+> Uses Express as server, and allow html to be seen.
+---
+## WEBPACK_EXPRESS_REACT
+> Uses Express as server, and run with react. Browser does not auto refresh. But with commands, server code are monitored, and React code are monitored. 
 ---
