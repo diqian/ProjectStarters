@@ -3,6 +3,10 @@
 ## HTML_CSS_JS 
 > Uses file protocal, no plugin, no webpack, no backend, only frontend code
 ---
+## JQuery_HTML_CSS 
+> Uses file protocal, no plugin, no webpack, no backend, only frontend code
+It utilized the library Jquery, font awesome lib, google font roboto.
+---
 ## WEBPACK_HTML_CSS_JS  (WB_HTML_CSS_JS)
 > Uses file protocal, no plugin, including webpack, no backend, only frotnend code
 ---
