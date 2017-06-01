@@ -2,7 +2,9 @@
 > node app.js  
 ---
 ## How it work?
-> in terminal, type ```node app.js```, then, node will run app.js, and start the express app. In express app, when you call res.render(file), express will lookup the file under views folder, and try to render it.
+> In terminal, type ```node app.js```, then, node will run ```app.js```, and start the express app. In express app, when you call res.render(file), express will lookup the file under views folder, and try to render it.
+>
+> This app has simple get and post request set up. No Database support.
 >
 > go to localhost:3000 to see the app
 >
@@ -20,7 +22,7 @@ views folder: when sending back html as response, express first look inside view
 |____views                  (auto served by express, rendered when get request)
 | |____home.ejs             (home page, "/")
 | |____love.ejs              
-| |____posts.ejs            
+| |____friends.ejs            
 | |____partials             (ejs partials, include in every ejs filews)
 | | |____footer.ejs
 | | |____header.ejs         (contains app.css)
@@ -32,13 +34,15 @@ In express, it doesn't automaticaly serve anything except the "views" directory.
 ## Why EJS? 
 EJS is embedded javascript. It allows you to write javascript code inside html.
 ```
-between those will be treated as javascript
-```<%= %>```  //the value will be returned, and render to HTML
-e.g ```<p>I love eat <%= thing.toUpperCase() %></p>```
----
-```<% %>``` //where we put logic like if statement which won't be rendered to html
+1. Between those will be treated as javascript
+<%= %>  //the value will be returned, and render to HTML
 e.g 
-```
+<p>I love eat <%= thing.toUpperCase() %></p>
+
+2. Where we put logic like if statement which won't be rendered to html
+<% %> 
+
+e.g 
 <h1>You are <%= thingVar %></h1>
 <% if(thingVar.toLowerCase() === "rusty"){ %>
     <p>Good CHoice! Rusty is the best</p>
@@ -56,9 +60,10 @@ e.g
     <li> Posts title <%= post.title %> </li>
 <% }) %>
 ```
-EJS also provide partials
-```<% include ./partials/header %>```
 
+3. EJS also provide partials
+<% include ./partials/header %>
+```
 
 ## Project Setup Step By Step
 ```
