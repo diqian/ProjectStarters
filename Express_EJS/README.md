@@ -33,14 +33,13 @@ In express, it doesn't automaticaly serve anything except the "views" directory.
 ## Why EJS? 
 EJS is embedded javascript. It allows you to write javascript code inside html.
 ```
-1. Between those will be treated as javascript
-<%= %>  //the value will be returned, and render to HTML
+EJS QUICK TUTORIAL (3 syntax)
+
+1. <%= %>:  between those will be treated as javascript, the value will be returned, and render to HTML
 e.g 
 <p>I love eat <%= thing.toUpperCase() %></p>
 
-2. Where we put logic like if statement which won't be rendered to html
-<% %> 
-
+2. <% %> Where we put logic like if statement which won't be rendered to html
 e.g 
 <h1>You are <%= thingVar %></h1>
 <% if(thingVar.toLowerCase() === "rusty"){ %>
@@ -58,7 +57,6 @@ e.g
 <% posts.forEach(function(post){ %>
     <li> Posts title <%= post.title %> </li>
 <% }) %>
-```
 
 3. EJS also provide partials
 <% include ./partials/header %>
