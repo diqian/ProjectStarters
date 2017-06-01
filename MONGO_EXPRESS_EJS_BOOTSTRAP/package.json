@@ -1,0 +1,18 @@
+{
+  "name": "Express_React",
+  "version": "1.0.0",
+  "description": "> npm run build     --- ## How it work? > npm run build, will invoke a script in package.json. This script will invoke webpack-dev-server. In the meantime, it will process webpack.config.js which is the configration file. In config file, it will tell dev-server to start with app.js and merge all the dependencies which are included in app.js into one bundle.js file. Bundle.js will be stored in memory during development mode, thus you won't be able to see it, but you will need it in production mode (npm run build:prod).  > > Now, with babel-loadder, webpack go into app.js, and fetch all the js files and transpile them into ES5, and babel laoder uses rules \"preset ES2015\", so it know its is transpiling ES2015(ES6) into ES5, and resulted in bundle.js > > With react preset, all your JSX code could be parsed successfully. > > Then, index.html include bundle.js (even bundle.js during dev mode is created in memory, the app will still run). > > Notice here, in index.html, we have a div with id=\"root\", which is the entry for react code. In src/app.js, react will target this root, and add inject all the react code in there. > > Go to localhost:8080 to see your app. --- > npm run build:prod, will run the production versin which has minified code, and you will see the genereated dist folder. --- ## Notice: > It use the server that webpack-dev-server provoides. --- ## File Structure ``` . |____dist                           (genereated by webpack) | |____bundle.js                    (included in index.html) |____index.html |____package.json |____README.md |____src | |____app.js                       (entry for webpack, include other components) | |____components | | |____Images.js                  (react components, exporting for app.js to include) |____webpack.config.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.4"
+  }
+}

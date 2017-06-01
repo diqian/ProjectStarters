@@ -4,7 +4,7 @@
 ## How it work?
 > In terminal, type ```node app.js```, then, node will run ```app.js```, and start the express app. In express app, on get request, the targeted route will do ```res.render(<filename>)```, express will lookup the file under views folder, and render it to the browser.
 >
-> This app has simple get and post request set up. No Database support.
+> This app has simple get and post request set up. No Database support. There's a fake database support by using temp varaibles. But on restart the app, they are gone.
 >
 > go to localhost:3000 to see the app
 >
