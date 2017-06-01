@@ -3,7 +3,7 @@
 ## HTML_CSS_JS 
 > Uses file protocal, no plugin, no webpack, no backend, only frontend code
 ---
-## JQuery_HTML_CSS 
+## JQuery_HTML_CSS _TODOLIST
 > Uses file protocal, no plugin, no webpack, no backend, only frontend code
 It utilized the library Jquery, font awesome lib, google font roboto.
 ---
@@ -33,10 +33,12 @@ It utilized the library Jquery, font awesome lib, google font roboto.
 ---
 ## Express_EJS_CSS
 > Uses Express as server, and ejs setup. Has simple working get and post route set up. No database support. It shows you how to communicate between express and ejs template, and also show you partials in ejs.
----
 ## WEBPACK_EXPRESS_REACT
 > Uses Express as server, and run with react. Browser does not auto refresh. But with commands, server code are monitored, and React code are monitored. 
 ---
 ## WEBPACK_EXPRESS_REACT_HOT_RELOADING
 > Uses Express as server, and run with react. Browser has auto refresh. For any change in server side or in react components, the change is instantly reflected in browser.
+---
+## MONGO_Express_EJS_RESTful_BLOGAPP
+> Uses Express as server, and ejs setup. Has fully implemented demo restful API, also use mongo as the database, and mongoose as the tool for database interaction. It also use semantic UI as libraray to demo.
 ---
