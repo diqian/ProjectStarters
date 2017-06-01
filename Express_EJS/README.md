@@ -58,18 +58,19 @@ e.g
     <li> Posts title <%= post.title %> </li>
 <% }) %>
 
-3. EJS also provide partials
+3. EJS also provide partials, say we have write up a header.ejs, we want to use the same header in home.ejs, the we just need the following line
+
 <% include ./partials/header %>
 ```
 
-## Project Dependency install
+## Project Dependency Setup
 ```
 npm install ejs --save
 npm install express --save
 npm install body-parser --save
 ```
-
-##Notes
+ 
+## Notes for express and ejs communication, and post request
 
 1. How to pass paramters from express to ejs template? 
 In Browser, if you type
