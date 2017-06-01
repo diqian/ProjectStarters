@@ -12,7 +12,7 @@ To test you database, open mongo shell
 mongo
 ```
 ## How it work
-This is an express app with mongoose to interact with mongo database. It also use ejs as template engine and use semantic UI as our CSS library. Express
+This is an express app with mongoose to interact with mongo database. It also use ejs as template engine and use semantic UI as our CSS library. It also has a fully implemented restful API for one to review.
 
 
 ## File Structure
@@ -24,9 +24,9 @@ This is an express app with mongoose to interact with mongo database. It also us
 | |____stylesheets  
 | | |____app.css          (included in header.ejs)
 |____README.md
-|____views
+|____views                (express default serve this folder, and render template under this folder)
 | |____edit.ejs
-| |____index.ejs
+| |____index.ejs          (by conventional, the root page)
 | |____new.ejs
 | |____show.ejs
 | |____partials           (ejs partial, included in every file)
@@ -56,6 +56,8 @@ Destory     /dogs/:id       DELETE      Delete a particular dog, then redirect s
 ```
 
 ## Notes On Sanitiazing Content when create
+
+In blog post, if user want to type html as part of the text, you should allow it. By also, you should disallow them to inject scripts. Thus using express-sanitizer to eliminate such risk.
 ```
 
 var expressSanitizer = require("express-sanitizer");
@@ -117,7 +119,7 @@ In new.ejs
 ```
 
 In app.js
-```
+```javascrpt
 app.post("/blogs", function(req, res){
     
     req.body.blog.body = req.sanitize(req.body.blog.body);
