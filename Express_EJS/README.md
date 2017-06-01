@@ -65,15 +65,16 @@ e.g
 <% include ./partials/header %>
 ```
 
-## Project Setup Step By Step
+## Project Dependency install
 ```
 npm install ejs --save
 npm install express --save
+npm install body-parser --save
 ```
 
 ##Notes
 
-1. How to pass paramters? 
+1. How to pass paramters from express to ejs template? 
 In Browser, if you type
 ```
 localhost:3000/fallinlovewith/rusty
