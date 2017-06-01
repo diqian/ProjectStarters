@@ -72,7 +72,8 @@ npm install body-parser --save
  
 ## Notes for express and ejs communication, and post request
 
-1. How to pass paramters from express to ejs template? 
+#### How to pass paramters from express to ejs template? 
+
 In Browser, if you type
 ```
 localhost:3000/fallinlovewith/rusty
@@ -84,7 +85,8 @@ app.get("/fallinlovewith/:thing", function(req, res){
     res.render("love.ejs", {thingVar: thing});
 });
 ```
-As you can see, as a response to this request, express app's response is send back a love.ejs page to render, with a variable called ```thingVar``` with value being ```Rusty```.
+As you can see, once the get route is reached, express need to send sth back as response. Here, response is a file called ```love.ejs```, along with the file is a variable called ```thingVar``` with value being ```Rusty``` which is stored in ```thing``` variable.
+
 
 And In love.ejs, thingVar will be replaced by the value Rusty and render to the browser
 ```
@@ -92,10 +94,12 @@ And In love.ejs, thingVar will be replaced by the value Rusty and render to the 
 <p>This is love.ejs file</p>
 ```
 
-2. How to make a post request
-Simple Post Route
-In input, we need to specify a name, and then, the value of name will be send in the body of the request. And inside the body of the new request, there be a single property named ```newfirend```.
 
+#### How to make a post request
+Simple Post Route Demo
+
+
+In input, we need to specify a name, and then, the value of name will be send in the body of the request. And inside the body of the new request, there be a single property named ```newfirend```.
 
 In posts.ejs
 ```
