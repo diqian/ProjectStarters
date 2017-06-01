@@ -7,6 +7,8 @@ var app = express();
 //express.static will specify a folder name that we expose to the web server
 app.use(express.static('public')); 
 
+
+
 app.listen(3000, function(){
     console.log('Express Server is up on port 3000');
-});
+}); 
