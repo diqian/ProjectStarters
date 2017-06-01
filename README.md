@@ -31,6 +31,9 @@ It utilized the library Jquery, font awesome lib, google font roboto.
 ## Express_Starter
 > Uses Express as server, and allow html to be seen.
 ---
+## Express_EJS_CSS
+> Uses Express as server, and ejs setup. Has simple working get and post route set up. No database support. It shows you how to communicate between express and ejs template, and also show you partials in ejs.
+---
 ## WEBPACK_EXPRESS_REACT
 > Uses Express as server, and run with react. Browser does not auto refresh. But with commands, server code are monitored, and React code are monitored. 
 ---
