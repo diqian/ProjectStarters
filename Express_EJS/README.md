@@ -2,13 +2,12 @@
 > node app.js  
 ---
 ## How it work?
-> In terminal, type ```node app.js```, then, node will run ```app.js```, and start the express app. In express app, when you call res.render(file), express will lookup the file under views folder, and try to render it.
+> In terminal, type ```node app.js```, then, node will run ```app.js```, and start the express app. In express app, on get request, the targeted route will do ```res.render(<filename>)```, express will lookup the file under views folder, and render it to the browser.
 >
 > This app has simple get and post request set up. No Database support.
 >
 > go to localhost:3000 to see the app
 >
-
 ## File Structure
 ```
 views folder: when sending back html as response, express first look inside views directory. Whenever we render a file whatever it's called, express is going to look first in the views directory. Say we are res.render("home.ejs"), it will try to find home.ejs in views directory no matter if you created it or not.
@@ -23,7 +22,7 @@ views folder: when sending back html as response, express first look inside view
 | |____home.ejs             (home page, "/")
 | |____love.ejs              
 | |____friends.ejs            
-| |____partials             (ejs partials, include in every ejs filews)
+| |____partials             (ejs partials, include in every ejs filews (some people call it "layout"))
 | | |____footer.ejs
 | | |____header.ejs         (contains app.css)
 ```
