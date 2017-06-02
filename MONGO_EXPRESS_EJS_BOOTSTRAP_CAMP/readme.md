@@ -1,5 +1,12 @@
-
-
+## How to run? 
+In one terminal
+```
+nodemon app.js
+```
+In other terminal, start the mongo server
+```
+mongod
+```
 
 
 #### seeds.js        
@@ -16,16 +23,15 @@
 | |____comment.js
 | |____user.js
 |____package.json
-|____public
+|____public                 (all the static file which need to be served)
 | |____stylesheets
 | | |____main.css
-|____routes
+|____routes                 (define your routes)
 | |____campgrounds.js
 | |____comments.js
 | |____index.js
 |____seeds.js               (run everytime, so there's sth in database)
-|____temp.txt
-|____views
+|____views                  (default served by express, contain the template you want to render)
 | |____campgrounds
 | | |____edit.ejs
 | | |____index.ejs
@@ -36,7 +42,7 @@
 | | |____new.ejs
 | |____landing.ejs
 | |____login.ejs
-| |____partials
+| |____partials             (ejs partial folder)
 | | |____footer.ejs
 | | |____header.ejs
 | |____register.ejs
@@ -50,7 +56,6 @@ We use passort, which is a authentication middleware for Node.js.
 There's passport-local, just for username and password.
 There's passport-facebook, passport-linkedin... and many more.
 passport-local-mongoose: help us.
-
 
 
 
