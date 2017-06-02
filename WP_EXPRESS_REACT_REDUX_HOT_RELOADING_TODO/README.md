@@ -203,11 +203,17 @@ npm install --save redux react-redux
 npm install --save redux-logger (you can see action happening, and the state)
 ```
 Now, we want to set up the flow
+
+
 Store(state) => Components => Actions(type: ADD_TODO, data: 'sth') => Dispatcher => Reducers(current state, action) => Store(state) => .... 
+
+
 In this todo app, how can we add a simple todo?
 
-1. Let's create our store, which main all the state.
+1. Let's create our store, which contains all the state.
 Here, we created a configureStore function, which take in all the initialState that we set up, and reducers to create a store object
+
+In redux/store.js
 ```
 import { applyMiddleware, compose, createStore } from 'redux';
 // this middleware will log out the our action and state
@@ -228,6 +234,8 @@ export default function configureStore(initialState = {todo: []}){
 Once the configuStore is defined, we should initlize it in client.js, which is our entry point,
 we set up intiliaState, and pass it in confiqureStore. Now, we get a provider component, which wrap around our app
 and pass state to provider. So it has the ability to pass state to app as prop.
+
+
 In client.js
 ```
 import React from 'react'
@@ -262,6 +270,9 @@ Now, store is almost ready to use. We now have Provider who is passing dispatch 
 
 In app.js, we connect with Provider through connect method from react-redux. Now, our app can use this.props.dispatch and this.props.todos.
 Now, we pass the dispatcher function to todoInput, let in be able to fire an action. And pass this.props.todos to TodoList. Let it be able to display all the todos from states.
+
+
+In app.js
 ```
 import React, { Component } from 'react'
 import TodoInput from './TodoInput'
@@ -302,6 +313,8 @@ export default connect(mapStateToProps)(App)
 
 ```
 In order to let todoInput fire an action, we first define an action with type and payload
+
+
 In actions.js
 ```
 let actions = {
@@ -315,6 +328,8 @@ let actions = {
 export default actions
 ```
 Once actions is defined, we should let reducer know how to change the state once the action is fired
+
+
 In reducer.js
 ```
 //helper method to insure each todo has unique id
@@ -347,6 +362,8 @@ let reducer = function(state, action) {
 export default reducer
 ```
 Now action, and reducer is ready, let's make the action to be fired by todoInput.
+
+
 In TodoInput.js, in handleSubmit, we dispatch the action that we want to fire.
 Once fired, payload is also passed along, and reducer will be called to genereate new state based on the action
 and the new state will be returned, and the targetted state is updated accordingly.
