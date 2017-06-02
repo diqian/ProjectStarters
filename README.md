@@ -1,4 +1,6 @@
-# This is a compilation of project starters. Many times, I get confused how things are connected and what does what. So I create this to help anybody to start any proejct.
+# This is a compilation of project starters. Many times, I get confused how things are connected and what does what. So I create this to help anybody to start any proejct. In this readme, you can find what feature you want, and then you go to specific project folder, inside that project folder, a detailed readme is present which guide you through how the app work, and what's the most important knowledge you need to know.
+
+Majority of the code are not original except all the Readmes. They are good resource that I really want to understand, and that's the incentive behind this project starters compilations.
 ---
 ## HTML_CSS_JS 
 > Uses file protocal, no plugin, no webpack, no backend, only frontend code
@@ -41,4 +43,7 @@ It utilized the library Jquery, font awesome lib, google font roboto.
 ---
 ## MONGO_Express_EJS_RESTful_BLOGAPP
 > Uses Express as server, and ejs setup. Has fully implemented demo restful API, also use mongo as the database, and mongoose as the tool for database interaction. It also use semantic UI as libraray to demo.
+---
+## MONGO_Express_EJS_AuthDemo
+> Uses Express as server, and ejs setup. With basic user login logout funtionarlity with passport, passport-local, poassport-local-mongoose. 
 ---
