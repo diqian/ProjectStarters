@@ -194,6 +194,8 @@ Redux: single state tree, state is read-only (only fire action), reducers are pu
 Store(state) => Components => Actions(type: ADD_TODO, data: 'sth') => Dispatcher => Reducers(current state, action) => Store(state) => .... 
 
 
+This means Store contain the state, and passed to components. Componetns has the ability to dispatch an action with type, and payload data. And then, based on the action, a reducer will be called, and genereated a new state which will be updated. And the updated state will be reflected in Store, thus be passed to Components. It's a one way loop, and everything goes through this loop.
+
 
 ## Redux setup
 ```
@@ -210,7 +212,7 @@ Store(state) => Components => Actions(type: ADD_TODO, data: 'sth') => Dispatcher
 
 In this todo app, how can we add a simple todo?
 
-1. Let's create our store, which contains all the state.
+First, Let's create our store, which contains all the state.
 Here, we created a configureStore function, which take in all the initialState that we set up, and reducers to create a store object
 
 In redux/store.js
