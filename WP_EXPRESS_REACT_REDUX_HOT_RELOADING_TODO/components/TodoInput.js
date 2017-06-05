@@ -19,18 +19,22 @@ class ToDoInput extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.props.dispatch(actions.addTodo(this.state.inputText))
+        // before mapDispatchToProps is available, we have to write this
+        // this.props.dispatch(actions.addTodo(this.state.inputText))
+        this.props.addTodo(this.state.inputText);
     }
 
     render() {
         return (
             <div>
-                <input type="text"
-                placeholder="put some text here"
-                value={this.state.inputText}
-                onChange={this.handleChange.bind(this)}
-                />
-                <button onClick={this.handleSubmit.bind(this)}>Submit</button>
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                    <input type="text"
+                    placeholder="put some text here"
+                    value={this.state.inputText}
+                    onChange={this.handleChange.bind(this)}
+                    />
+                    <input type="submit"/>
+                </form>
             </div>
         )
     }

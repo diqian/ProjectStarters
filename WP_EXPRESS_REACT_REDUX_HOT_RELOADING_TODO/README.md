@@ -441,7 +441,100 @@ export default TodoList
 ```
 
 
+## Get rid of dispatch as prop
+As you can see, you always have to pass the dispatcher down
+every single time like this
 
+in app.js
+```
+class App extends Component {
+
+  render() {
+    return (
+        <div>
+            <h1>This is A TODO APP</h1>
+            <TodoInput dispatch={this.props.dispatch} />
+            <TodoList dispatch={this.props.dispatch} todos={this.props.todos} />
+        </div>
+    )
+  }
+}
+```
+It's kind of repetitive, and kind of violate don't repeat your self.
+But we can reduce this. And then, we can just import actions in app.js
+only once. And we send specific actions down instead of sending
+dispatcher down.
+
+#### How we do htis?
+in app.js, you add mapDispatchToProps, so you can just
+worry about actions. Instead of passing state to the function,
+here we pass in dispatch to the second function.
+Now we return a specific property that could be made available to app.
+You pass to bindActionCreators(actions, dispatch). This allow you to
+not needing to call this.props.dispatch(actions.addTodo(this.state.inputText)) (in TodoItem.js).
+You just have to invoke the action. 
+```
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(actions, dispatch)
+    };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+```
+
+Before this setup, our App in developer console has
+```$xslt
+Porps:
+    dispatch:
+```
+But now, our action has become.
+Now all you action is wrapped with dispatcher. 
+```$xslt
+Props:
+    actions:
+        addTodo
+        completeTodo
+        deleteTodo
+```
+
+
+### Why we need to combineReducer
+As we can see,in actions, or reducers, we have a long long
+list of these. Which will give people headache. Because as the 
+list become longer and longer, it's just impossible to keep all these
+actions or reducer in one file. Thus we should modulize our code.
+
+in action.js, now we will factor things out
+```$xslt
+let actions = {
+    addTodo: function(text) {
+        return {
+            type: 'ADD_TODO',
+            text: text
+        }
+    },
+    completeTodo: function(id){
+        return {
+            type: 'COMPLETE_TODO',
+            id: id
+        }
+    },
+    deleteTodo: function(id){
+        return {
+            type: 'DELETE_TODO',
+            id: id
+        }
+    },
+
+    createNewUserId: function () {
+        return {
+            type: 'CREATE_USER_ID',
+            id: Math.round(Math.random() * 100)
+        }
+    }
+}
+export default actions
+```
 
 
 
