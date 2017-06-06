@@ -5,16 +5,18 @@ This tutorial is just too good to be true.
 ```
 https://scotch.io/tutorials/retrogames-library-with-node-react-and-redux-1-server-api-and-react-frontend
 ```
-## File Structure 
+## File Structure (MERN Stack)
 ```
 .
+|____server.js                  (configure our express server, connect middleware, write route)
+|
 |____app
-| |____models                   (you mongoose model)
-| | |____game.js
+| |____models                   (your mongoose model)
+| | |____game.js                (used in routes/game.js)
 | | |____user.js
 | |
 | |____routes                   (you api call, and operation with mongo database)
-|   |____game.js
+|   |____game.js                (include models/game.js, and export to server.js)
 |   |____user.js
 |
 |____client
@@ -28,7 +30,7 @@ https://scotch.io/tutorials/retrogames-library-with-node-react-and-redux-1-serve
 | | |____index.html
 | |
 | |____src
-| | |____index.js
+| | |____index.js                   (entry of webpack)
 | | |
 | | |____routes.js
 | | |____store.js
@@ -88,10 +90,8 @@ https://scotch.io/tutorials/retrogames-library-with-node-react-and-redux-1-serve
 |____config
 | |____index.js
 |
-|____server.js                  (configure our express server, connect middleware, write route)
-|
-|____webpack-loaders.js
-|____webpack-paths.js
+|____webpack-loaders.js         (export to webpack config)
+|____webpack-paths.js           (export to webpack config)
 |____webpack.config.js
 |
 |____package.json

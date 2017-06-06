@@ -1,7 +1,7 @@
 import express from 'express';
-import bodyParser from 'body-parser';
+import bodyParser from 'body-parser'; // parsing request bodies
+import morgan from 'morgan'; //output useful logs in the console.
 import mongoose from 'mongoose';
-import morgan from 'morgan';
 
 import { getGames, getGame, postGame, deleteGame } from './app/routes/game';
 import { signup, login, verifyAuth } from './app/routes/user';
