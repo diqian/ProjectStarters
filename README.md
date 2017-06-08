@@ -1,4 +1,4 @@
-# This is a compilation of project starters. Many times, I get confused how things are connected and what does what. So I create this to help anybody to start any proejct. In this readme, you can find what feature you want, and then you go to specific project folder, inside that project folder, a detailed readme is present which guide you through how the app work, and what's the most important knowledge you need to know.
+# This is a compilation of project starters. Many times, I get confused how things are connected and what does what. So I create this to help anybody to start any proejct. In this readme, you can find what feature you want, and then you go to specific project folder, inside that project folder, a detailed readme is present which guide you through how the each setup work, and what's the most important knowledge you need to know.
 
 Majority of the code are not original except all the Readmes. They are good resource that I really want to understand, and that's the incentive behind this project starters compilations.
 ---
